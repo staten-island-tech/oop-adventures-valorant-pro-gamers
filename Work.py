@@ -1,53 +1,30 @@
-class zombie():
-    def __init__(self,name,drops,health,power):
-        self.name = name
-        self.drops = drops
-        self.health = int(health)
-        self.health = int(power)
 
-zombie1 =zombie("zombie",[], 40, 1)
+name=input("name pet")
+class pet():
+    def __init__(self,name,health,food,hunger,thirst,power):
+        self.name=name
+        self.health=int(health)
+        self.food=int(food)
+        self.hunger=int(hunger)
+        self.thirst=int(thirst)
+        self.power=int(power)
 
-print(zombie1)
-
-class boar():
-    def __init__(self,name,drops,health,power):
-        self.name = name
-        self.drops = drops
-        self.health = int(health)
-        self.health = int(power)
-
-boar1 =boar("boar",[], 50, 2)
-
-print(boar1)
-
-class golem():
-    def __init__(self,name,drops,health,power):
-        self.name = name
-        self.drops = drops
-        self.health = int(health)
-        self.health = int(power)
-
-golem1 =golem("golem",[], 80, 2)
-
-print(golem1)
-
-class skeleton():
-    def __init__(self,name,drops,health,power):
-        self.name = name
-        self.drops = drops
-        self.health = int(health)
-        self.health = int(power)
-
-skeleton1 =skeleton("skeleton",[], 60, 3)
-
-print(skeleton1)
+self=pet(name,100,2,75,75,1)
+print(self.__dict__)
+if self.hunger<=0:
+    print("death")
+    quit()      
+               
+def overcap():
+        for stat in ("hunger", "thirst"):
+            setattr(self, stat, min(getattr(self, stat), 100))
+               
+def feed():
+        self.hunger+=10
+        self.food-=1
+        print(self.hunger)
 
 
 
-# actions = {
-#         "1": happiness,
-#         "2": hungry,
-#         "3": water,
-#         "4": love,
-#         "5": gamble,
-#     }
+#class instance function 
+
