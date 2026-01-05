@@ -45,13 +45,26 @@ skeleton1 =skeleton("skeleton",[], 60, 3)
 
 print(skeleton1.__dict__)
 
+class golemking():
+    def __init__(self,name,drops,health,power):
+        self.name = name
+        self.drops = drops
+        self.health = int(health)
+        self.power = int(power)
+
+golem2 =golemking("golem king",[],670, 10)
+print(golem2.__dict__)
+
+class orc():
+      def __init__(self,name,drops,health,power):
+        self.name = name
+        self.drops = drops
+        self.health = int(health)
+        self.power = int(power)
+
+orc1=orc("orc",[],200,0.67)
+print(orc1.__dict__)
 
 
 
-# actions = {
-#         "1": happiness,
-#         "2": hungry,
-#         "3": water,
-#         "4": love,
-#         "5": gamble,
-#     }
+
