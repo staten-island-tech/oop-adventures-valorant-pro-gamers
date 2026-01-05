@@ -10,7 +10,7 @@ class pet():
 
 self=pet(name,100,2,75,75,1)
 print(self.__dict__)
-if self.hunger==0:
+if self.hunger<=0:
     quit()      
                
 if self.hunger>=100:
@@ -20,6 +20,8 @@ def feed():
         self.hunger+=10
         self.food-=1
         print(self.hunger)
+if self.food<=0:
+    
 
 
 
