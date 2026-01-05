@@ -40,7 +40,8 @@ class skeleton():
 
 skeleton1 =skeleton("skeleton",[], 60, 3)
 
-print(skeleton1)
+print(skeleton.__dict__)
+
 
 
 
