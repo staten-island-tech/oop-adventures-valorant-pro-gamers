@@ -8,7 +8,7 @@ class pet():
         self.thirst=int(thirst)
         self.power=int(power)
 
-self=pet(name,100,2,75,75,20)
+self=pet(name,100,2,75,75,1)
 
 print(self.__dict__)
 
@@ -92,9 +92,9 @@ def fight():
             print("you defeated the zombie")
             break
 
-main=input("1:Fight 2: Bosses")
+TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses")
 while True:
- if main== "1":
+ if TRIPlETTUngTUngtUngsahur== "1":
      fight()
 
 
