@@ -1,7 +1,8 @@
-
+   
 name=input("name pet")
 class pet():
-    def __init__(self,name,health,food,hunger,thirst,power,coins):
+    def __init__(self,name,health,food,hunger,thirst,power,coins,defence,items):
+        self.items(items)
         self.name=name
         self.health=int(health)
         self.food=int(food)
@@ -9,7 +10,8 @@ class pet():
         self.thirst=int(thirst)
         self.power=int(power)
         self.coins=int(coins)
-
+        self.defence=int(defence)
+        self.items=["junk"]
 self=pet(name,100,2,75,75,2,10)
 print(self.__dict__)
 while True:
@@ -44,6 +46,5 @@ while True:
     else:
         print("Not an option")    
         continue
-
 #class instance function 
 
