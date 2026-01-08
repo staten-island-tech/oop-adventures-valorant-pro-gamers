@@ -10,7 +10,7 @@ class pet():
         self.power=int(power)
         self.coins=int(coins)
         self.defence=int(defence)
-self=pet(name,100,2,75,75,2,100000,5)
+self=pet(name,100,2,75,75,2,20,5)
 print(self.__dict__)
 while True:
     action=input("Fight or Feed?")
@@ -22,7 +22,7 @@ while True:
     def overcap():
         for stat in ("hunger", "thirst"):
             setattr(self, stat, min(getattr(self, stat), 100))
-               
+        
     def feed():
         if self.food>=1:
             self.hunger+=10
@@ -36,14 +36,34 @@ while True:
         print("fought")
     def slots():
         slot=random.randint(7,77)
-        self.coins -=5
-        if slot == 77:
-            print("YOU WON BIG KEEP GOING DUDE")
-            self.money += 777
+        self.coins -=7
+        print("Gambling...")
+        if slot <=76:
+            print("Fail D: (1 to quickgamble)")
+        else:
+            print("YOU WON!!!!!")
+            self.coins +=777
+    def quickslots():
+        slot=random.randint(7,77)
+        self.coins -=7
+        print("Gambling...")
+        if slot <=76:
+            print("Fail D:")
+        else:
+            print("YOU WON!!!!!")
+            self.coins +=777
+
+    def shop():
+        print(PandA)
+
+    PandA=("Potions: MaxHP:+10 $:50 PowerPot:+5PW $:100 Food:+15Hng $:10 Leather Armor:+10Def $:200")
+
+
     options = {
         "fight":fight,
         "feed":feed,
-        "slots":slots
+        "slots":slots,
+        "1":quickslots
                 }
     choice = action.lower()
     if choice in options:
@@ -51,5 +71,38 @@ while True:
     else:
         print("Not an option")    
         continue
-#class instance function 
 
+ 
+#class instance function 
+    def actualitems():
+        LeatherAmr = self.defence=+10
+
+    items=[
+        {
+            "name": LeatherAmr,
+            "price": "200" ,
+            "description": "+10Def"
+        },
+        {
+            "name":"Food",
+            "price": "10",
+            "description": "+15Hng"
+        },
+        {
+            "name":"PowerPot",
+            "price": "100",
+            "description": "+5Pwr"
+        },
+        {
+            "name":"MaxHP",
+            "price": "50",
+            "description":"+10MaxHP"
+        }
+    ]
+
+    while True:
+        for index, item in enumerate(items):
+            print(index, ":", item["name"], index, ":", item["price"])
+        choices = input("What would you like to buy? Type a number based on the options:")
+        chosen_item = items[int(choices)]
+        print(f"You bought {chosen_item['name']}")
