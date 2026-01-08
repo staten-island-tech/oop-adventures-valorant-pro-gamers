@@ -1,18 +1,24 @@
 name=input("name pet")
 class pet():
-    def __init__(self,name,health,food,hunger,thirst,power):
+    def __init__(self,name,health,food,hunger,thirst,power,coins):
         self.name=name
         self.health=int(health)
         self.food=int(food)
         self.hunger=int(hunger)
         self.thirst=int(thirst)
         self.power=int(power)
+        self.coins=int(coins)
 
-self=pet(name,100,2,75,75,5)
+self=pet(name,100,2,75,75,5,3)
 
 
 print(self.__dict__)
-
+def death():
+   if self.health<=0:
+      print("you died buy potions to make you stronger")
+      quit()
+         
+      
 class zombie():
     def __init__(self,name,drops,health,power):
         self.name = name
@@ -80,12 +86,13 @@ class orc():
 orc1=orc("orc",[],200,30)
 
 def fight():
-    sigma=input("1: zombie 2: boar 3: Golem 4: skeleton 5: orc 6: go back")
-
-    if sigma== "1":
+ while True:
+  sigma=input("1: zombie 2: boar 3: Golem 4: skeleton 5: orc 6: go back")
+  if sigma== "1":
        zombie1.health=40
        print(zombie1.health)
        while True: 
+        death()
         sigma1=input("1: attack 2: quit")
         if sigma1=="1":
             zombie1.health-=self.power
@@ -95,14 +102,17 @@ def fight():
         if sigma1=="2":
             break
         if zombie1.health<=0:
+            self.coins+=1
+            print(f"coins",self.coins)
             print("you defeated the zombie")
-            break
+            break 
+            
     
-    
-    if sigma== "2":
+  if sigma== "2":
        boar1.health=50
        print(boar1.health)
        while True: 
+        death()
         sigma2=input("1: attack 2: quit")
         if sigma2=="1":
             boar1.health-=self.power
@@ -113,14 +123,17 @@ def fight():
         if sigma2=="2":
             break
         if boar1.health<=0:
+            self.coins+=2
+            print(f"coins",self.coins)
             print("you defeated the boar")
             break
   
   
-    if sigma== "3":
+  if sigma== "3":
        golem1.health=80
        print(golem1.health)
        while True: 
+        death()
         sigma3=input("1: attack 2: quit")
         if sigma3=="1":
             golem1.health-=self.power
@@ -131,14 +144,16 @@ def fight():
         if sigma3=="2":
             break
         if golem1.health<=0:
+            self.coins+=3
+            print(f"coins",self.coins)
             print("you defeated the golem")
             break
    
-
-    if sigma== "4":
+  if sigma== "4":
        skeleton1.health=60
        print(skeleton1.health)
        while True: 
+        death()
         sigma4=input("1: attack 2: quit")
         if sigma4=="1":
             skeleton1.health-=self.power
@@ -148,14 +163,17 @@ def fight():
         if sigma4=="2":
             break
         if skeleton1.health<=0:
+            self.coins+=1
+            print(f"coins",self.coins)
             print("you defeated the skeleton")
             break
    
    
-    if sigma== "5":
+  if sigma== "5":
        orc1.health=200
        print(orc1.health)
        while True: 
+        death()
         sigma5=input("1: attack 2: quit")
         if sigma5=="1":
             orc1.health-=self.power
@@ -165,23 +183,52 @@ def fight():
         if sigma5=="2":
             break
         if orc1.health<=0:
+            self.coins+=5
+            print(f"coins",self.coins)
             print("you defeated the skeleton")
             break
-def death():
-   if self.health<=0:
-      quit()
-      print("you died")   
-    
+      
+  if sigma=="6":
+       break
 
-TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses")
+
+   
+def shop():
+  while True:
+     
+     sigma6= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
+     if sigma6=="1":
+       if self.coins>=3:
+        self.coins-=3
+        self.health+=50
+       elif self.coins<3:
+          print("brokie")
+          break
+     
+     if sigma6=="2":
+      if self.coins>=3:
+        self.coins-=3
+        self.power+=2
+      elif self.coins<3:
+          print("brokie")
+          break
+
+     if sigma6=="3":
+      if self.coins>=1:
+        self.coins-=1
+        self.food+=1
+     elif self.coins<1:
+          print("brokie")
+          break
+     
+     if sigma6=="4":
+        break
+        
+
+    
 while True:
- death()
+ TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop")
  if TRIPlETTUngTUngtUngsahur== "1":
      fight()
- 
-
-
-
-
-
-
+ if TRIPlETTUngTUngtUngsahur== "3":
+     shop()
