@@ -1,15 +1,15 @@
+import random
 name=input("name pet")
 class pet():
-    def __init__(self,name,health,food,hunger,thirst,power,coins):
+    def __init__(self,name,health,food,hunger,power,coins):
         self.name=name
         self.health=int(health)
         self.food=int(food)
         self.hunger=int(hunger)
-        self.thirst=int(thirst)
         self.power=int(power)
         self.coins=int(coins)
 
-self=pet(name,100,2,75,75,5,3)
+self=pet(name,100,2,75,5,3)
 
 
 print(self.__dict__)
@@ -196,8 +196,8 @@ def fight():
 def shop():
   while True:
      
-     sigma6= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
-     if sigma6=="1":
+     ShopI= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
+     if ShopI=="1":
        if self.coins<3:
           print("brokie")
           break
@@ -206,7 +206,7 @@ def shop():
         self.health+=150
        
      
-     if sigma6=="2":
+     if ShopI=="2":
       if self.coins<3:
           print("brokie")
           break
@@ -215,7 +215,7 @@ def shop():
         self.power+=2
      
 
-     if sigma6=="3":
+     if ShopI=="3":
       if self.coins>=1:
         self.coins-=1
         self.food+=1
@@ -223,16 +223,69 @@ def shop():
           print("brokie")
           break
      
-     if sigma6=="4":
+     if ShopI=="4":
         break
         
-
+def stats():
+   print(self.__dict__)
     
 while True:
- TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats")
- if TRIPlETTUngTUngtUngsahur== "1":
-     fight()
- if TRIPlETTUngTUngtUngsahur== "3":
-     shop()
- if TRIPlETTUngTUngtUngsahur=="4":
-    print(self.__dict__)
+    action=input("Fight or Feed?")
+    if self.hunger<=0:
+        print("death")
+        quit()
+    enemies=["zombie","golem","skeleton"]
+            
+    def overcap():
+        for stat in ("hunger", "thirst"):
+            setattr(self, stat, min(getattr(self, stat), 100))#stuff
+        
+    def feed():
+        if self.food>=1:
+            self.hunger+=10
+            self.food-=1
+            print(self.hunger)
+        else:
+            self.food<=0
+            print("no food")
+    def slots():
+        slot=random.randint(7,77)
+        self.coins -=7
+        print("Gambling...")
+        if slot <=76:
+            print("Fail D: (1 to quickgamble)")
+        else:
+            print("YOU WON!!!!!")
+            self.coins +=777
+    def quickslots():
+        slot=random.randint(7,77)
+        self.coins -=7
+        print("Gambling...")
+        if slot <=76:
+            print("Fail D:")
+        else:
+            print("YOU WON!!!!!")
+            self.coins +=777
+
+    def shop():
+        print(PandA)
+
+    PandA=("Potions: MaxHP:+10 $:50 PowerPot:+5PW $:100 Food:+15Hng $:10 Leather Armor:+10Def $:200")
+
+    options = {
+        "fight":fight,
+        "feed":feed,
+        "slots":slots,
+        "1":quickslots,
+        "shop":shop,
+        "stats":stats
+                }
+    choice = action.lower()
+    if choice in options:
+        options[choice]()
+    else:
+        print("Not an option")    
+        continue
+
+ 
+#class instance function 
