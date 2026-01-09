@@ -9,7 +9,7 @@ class pet():
         self.power=int(power)
         self.coins=int(coins)
 
-self=pet(name,100,2,75,75,5,3)
+self=pet(name,150,2,75,75,8,3)
 
 
 print(self.__dict__)
@@ -66,14 +66,14 @@ skeleton1 =skeleton("skeleton",[], 60, 5)
 
 
 
-class golemking():
+class Zombifiedskeletonboss():
     def __init__(self,name,drops,health,power):
         self.name = name
         self.drops = drops
         self.health = int(health)
         self.power = int(power)
 
-golem2 =golemking("golem king",[],670, 50)
+boss1 =Zombifiedskeletonboss("golem king",[],670,50)
 
 
 class orc():
@@ -191,7 +191,26 @@ def fight():
   if sigma=="6":
        break
 
-
+def bosses(): 
+ sigmalicious=input("1: zombified skeleton boss 2: Quit")
+ if sigmalicious=="1":
+       boss1.health=670
+       print(boss1.health)
+       while True: 
+        death()
+        sigma67=input("1: attack 2: quit")
+        if sigma67=="1":
+            boss1.health-=self.power
+            self.health-=boss1.power
+            print(f"Self health",self.health)
+            print(f"health boss:",boss1.health)
+        if sigma67=="2":
+            break
+        if boss1.health<=0:
+            self.coins+=50
+            print(f"coins",self.coins)
+            print("you defeated the auralicious boss")
+            break
    
 def shop():
   while True:
@@ -212,7 +231,7 @@ def shop():
           break
       elif self.coins>=3:
         self.coins-=3
-        self.power+=2
+        self.power+=5
      
 
      if sigma6=="3":
@@ -232,6 +251,8 @@ while True:
  TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats")
  if TRIPlETTUngTUngtUngsahur== "1":
      fight()
+ if TRIPlETTUngTUngtUngsahur=="2":
+    bosses()
  if TRIPlETTUngTUngtUngsahur== "3":
      shop()
  if TRIPlETTUngTUngtUngsahur=="4":
