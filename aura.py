@@ -179,13 +179,13 @@ def fight():
             orc1.health-=self.power
             self.health-=orc1.power
             print(f"Self health",self.health)
-            print(f"health skeleton:",orc1.health)
+            print(f"health orc:",orc1.health)
         if sigma5=="2":
             break
         if orc1.health<=0:
             self.coins+=5
             print(f"coins",self.coins)
-            print("you defeated the skeleton")
+            print("you defeated the orc")
             break
       
   if sigma=="6":
@@ -198,26 +198,28 @@ def shop():
      
      sigma6= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
      if sigma6=="1":
-       if self.coins>=3:
-        self.coins-=3
-        self.health+=50
-       elif self.coins<3:
+       if self.coins<3:
           print("brokie")
           break
+       elif self.coins>=3:
+        self.coins-=3
+        self.health+=150
+       
      
      if sigma6=="2":
-      if self.coins>=3:
-        self.coins-=3
-        self.power+=2
-      elif self.coins<3:
+      if self.coins<3:
           print("brokie")
           break
+      elif self.coins>=3:
+        self.coins-=3
+        self.power+=2
+     
 
      if sigma6=="3":
       if self.coins>=1:
         self.coins-=1
         self.food+=1
-     elif self.coins<1:
+      elif self.coins<1:
           print("brokie")
           break
      
@@ -227,8 +229,10 @@ def shop():
 
     
 while True:
- TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop")
+ TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats")
  if TRIPlETTUngTUngtUngsahur== "1":
      fight()
  if TRIPlETTUngTUngtUngsahur== "3":
      shop()
+ if TRIPlETTUngTUngtUngsahur=="4":
+    print(self.__dict__)
