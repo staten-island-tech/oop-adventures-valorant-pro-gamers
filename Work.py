@@ -74,35 +74,29 @@ while True:
 
  
 #class instance function 
-    def actualitems():
-        LeatherAmr = self.defence=+10
+    # def actualitems():
+    #     LeatherAmr = self.defence=+10
 
-    items=[
-        {
-            "name": LeatherAmr,
-            "price": "200" ,
-            "description": "+10Def"
-        },
-        {
-            "name":"Food",
-            "price": "10",
-            "description": "+15Hng"
-        },
-        {
-            "name":"PowerPot",
-            "price": "100",
-            "description": "+5Pwr"
-        },
-        {
-            "name":"MaxHP",
-            "price": "50",
-            "description":"+10MaxHP"
-        }
-    ]
+    # items=[
+    #     {
+    #         "name": LeatherAmr,
+    #         "price": "200" ,
+    #         "description": "+10Def"
+    #     },
+    #     {
+    #         "name":"Food",
+    #         "price": "10",
+    #         "description": "+15Hng"
+    #     },
+    #     {
+    #         "name":"PowerPot",
+    #         "price": "100",
+    #         "description": "+5Pwr"
+    #     },
+    #     {
+    #         "name":"MaxHP",
+    #         "price": "50",
+    #         "description":"+10MaxHP"
+    #     }
+    # ]
 
-    while True:
-        for index, item in enumerate(items):
-            print(index, ":", item["name"], index, ":", item["price"])
-        choices = input("What would you like to buy? Type a number based on the options:")
-        chosen_item = items[int(choices)]
-        print(f"You bought {chosen_item['name']}")
