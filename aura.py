@@ -1,15 +1,15 @@
+import time
 name=input("name pet")
 class pet():
-    def __init__(self,name,health,food,hunger,thirst,power,coins):
+    def __init__(self,name,health,food,hunger,power,coins):
         self.name=name
         self.health=int(health)
         self.food=int(food)
         self.hunger=int(hunger)
-        self.thirst=int(thirst)
         self.power=int(power)
         self.coins=int(coins)
 
-self=pet(name,150,2,75,75,8,3)
+self=pet(name,150,2,75,8,3)
 
 
 print(self.__dict__)
@@ -17,8 +17,11 @@ def death():
    if self.health<=0:
       print("you died buy potions to make you stronger")
       quit()
+   if self.hunger<=0:
+      print("you died of hunger")
+      quit()
+   
          
-      
 class zombie():
     def __init__(self,name,drops,health,power):
         self.name = name
@@ -97,8 +100,11 @@ def fight():
         if sigma1=="1":
             zombie1.health-=self.power
             self.health-=zombie1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health zombie:",zombie1.health)
+            print(self.hunger,"hunger")
+            
         if sigma1=="2":
             break
         if zombie1.health<=0:
@@ -117,9 +123,10 @@ def fight():
         if sigma2=="1":
             boar1.health-=self.power
             self.health-=boar1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health boar:",boar1.health)
-            
+            print(self.hunger,"hunger")
         if sigma2=="2":
             break
         if boar1.health<=0:
@@ -138,9 +145,10 @@ def fight():
         if sigma3=="1":
             golem1.health-=self.power
             self.health-=golem1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health golem:",golem1.health)
-        
+            print(self.hunger,"hunger")
         if sigma3=="2":
             break
         if golem1.health<=0:
@@ -158,8 +166,10 @@ def fight():
         if sigma4=="1":
             skeleton1.health-=self.power
             self.health-=skeleton1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health skeleton:",skeleton1.health)
+            print(self.hunger,"hunger")
         if sigma4=="2":
             break
         if skeleton1.health<=0:
@@ -178,8 +188,10 @@ def fight():
         if sigma5=="1":
             orc1.health-=self.power
             self.health-=orc1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health orc:",orc1.health)
+            print(self.hunger,"hunger")
         if sigma5=="2":
             break
         if orc1.health<=0:
@@ -202,8 +214,10 @@ def bosses():
         if sigma67=="1":
             boss1.health-=self.power
             self.health-=boss1.power
+            self.hunger-=5
             print(f"Self health",self.health)
             print(f"health boss:",boss1.health)
+            print(self.hunger,"hunger")
         if sigma67=="2":
             break
         if boss1.health<=0:
@@ -244,11 +258,24 @@ def shop():
      
      if sigma6=="4":
         break
+def feed():
+   while True:
+    sigmalicious=input("1: Feed 2: leave")
+    if sigmalicious=="1":
+      if self.food>=1:
+        self.food-=1
+        self.hunger+=10
+        print(self.food)
+      if self.food<=0:
+        print("buy food")
         
+    if sigmalicious=="2":
+       break
+
 
     
 while True:
- TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats")
+ TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats 5: Feed")
  if TRIPlETTUngTUngtUngsahur== "1":
      fight()
  if TRIPlETTUngTUngtUngsahur=="2":
@@ -257,3 +284,5 @@ while True:
      shop()
  if TRIPlETTUngTUngtUngsahur=="4":
     print(self.__dict__)
+ if TRIPlETTUngTUngtUngsahur=="5":
+   feed()
