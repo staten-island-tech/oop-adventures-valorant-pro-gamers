@@ -53,12 +53,6 @@ while True:
             print("YOU WON!!!!!")
             self.coins +=777
 
-    def shop():
-        print(PandA)
-
-    PandA=("Potions: MaxHP:+10 $:50 PowerPot:+5PW $:100 Food:+15Hng $:10 Leather Armor:+10Def $:200")
-
-
     options = {
         "fight":fight,
         "feed":feed,
@@ -71,6 +65,17 @@ while True:
     else:
         print("Not an option")    
         continue
+
+        
+
+
+
+
+
+
+
+
+
 
  
 #class instance function 
