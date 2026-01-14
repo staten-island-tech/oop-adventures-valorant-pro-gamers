@@ -117,7 +117,7 @@ while True:
         print("Gambling...")
         if slot <=76:
             print("Fail D:")
-        else:
+        if slot==77:
             print("YOU WON!!!!!")
             self.coins +=777
 
