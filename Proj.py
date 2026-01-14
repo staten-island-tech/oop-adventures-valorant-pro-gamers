@@ -1,4 +1,8 @@
+<<<<<<< HEAD:Proj.py
 import random
+=======
+import time
+>>>>>>> lucassimga:aura.py
 name=input("name pet")
 class pet():
     def __init__(self,name,health,food,hunger,power,coins):
@@ -9,7 +13,11 @@ class pet():
         self.power=int(power)
         self.coins=int(coins)
 
+<<<<<<< HEAD:Proj.py
 self=pet(name,100,2,75,5,3)
+=======
+self=pet(name,150,2,75,8,3)
+>>>>>>> lucassimga:aura.py
 
 
 print(self.__dict__)
@@ -17,8 +25,11 @@ def death():
    if self.health<=0:
       print("you died buy potions to make you stronger")
       quit()
+   if self.hunger<=0:
+      print("you died of hunger")
+      quit()
+   
          
-      
 class zombie():
     def __init__(self,name,drops,health,power):
         self.name = name
@@ -66,14 +77,14 @@ skeleton1 =skeleton("skeleton",[], 60, 5)
 
 
 
-class golemking():
+class Zombifiedskeletonboss():
     def __init__(self,name,drops,health,power):
         self.name = name
         self.drops = drops
         self.health = int(health)
         self.power = int(power)
 
-golem2 =golemking("golem king",[],670, 50)
+boss1 =Zombifiedskeletonboss("zombified skeleton boss",[],10000,50)
 
 
 class orc():
@@ -97,8 +108,11 @@ def fight():
         if sigma1=="1":
             zombie1.health-=self.power
             self.health-=zombie1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health zombie:",zombie1.health)
+            print(self.hunger,"hunger")
+            
         if sigma1=="2":
             break
         if zombie1.health<=0:
@@ -122,10 +136,15 @@ def fight():
 >>>>>>> Nathanwork-Branch
             boar1.health-=self.power
             self.health-=boar1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health boar:",boar1.health)
+<<<<<<< HEAD:Proj.py
             
 <<<<<<< HEAD
+=======
+            print(self.hunger,"hunger")
+>>>>>>> lucassimga:aura.py
         if sigma2=="2":
 =======
         if choice=="2":
@@ -152,10 +171,15 @@ def fight():
 >>>>>>> Nathanwork-Branch
             golem1.health-=self.power
             self.health-=golem1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health golem:",golem1.health)
+<<<<<<< HEAD:Proj.py
         
 <<<<<<< HEAD
+=======
+            print(self.hunger,"hunger")
+>>>>>>> lucassimga:aura.py
         if sigma3=="2":
 =======
         if choice=="2":
@@ -181,9 +205,14 @@ def fight():
 >>>>>>> Nathanwork-Branch
             skeleton1.health-=self.power
             self.health-=skeleton1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health skeleton:",skeleton1.health)
+<<<<<<< HEAD:Proj.py
 <<<<<<< HEAD
+=======
+            print(self.hunger,"hunger")
+>>>>>>> lucassimga:aura.py
         if sigma4=="2":
 =======
         if choice=="2":
@@ -210,9 +239,14 @@ def fight():
 >>>>>>> Nathanwork-Branch
             orc1.health-=self.power
             self.health-=orc1.power
+            self.hunger-=1
             print(f"Self health",self.health)
             print(f"health orc:",orc1.health)
+<<<<<<< HEAD:Proj.py
 <<<<<<< HEAD
+=======
+            print(self.hunger,"hunger")
+>>>>>>> lucassimga:aura.py
         if sigma5=="2":
 =======
         if choice=="2":
@@ -227,7 +261,28 @@ def fight():
   if sigma=="6":
        break
 
-
+def bosses(): 
+ sigmalicious=input("1: zombified skeleton boss 2: Quit")
+ if sigmalicious=="1":
+       boss1.health=670
+       print(boss1.health)
+       while True: 
+        death()
+        sigma67=input("1: attack 2: quit")
+        if sigma67=="1":
+            boss1.health-=self.power
+            self.health-=boss1.power
+            self.hunger-=5
+            print(f"Self health",self.health)
+            print(f"health boss:",boss1.health)
+            print(self.hunger,"hunger")
+        if sigma67=="2":
+            break
+        if boss1.health<=0:
+            self.coins+=150
+            print(f"coins",self.coins)
+            print("you defeated the auralicious boss")
+            break
    
 def shop():
   while True:
@@ -248,7 +303,7 @@ def shop():
           break
       elif self.coins>=3:
         self.coins-=3
-        self.power+=2
+        self.power+=5
      
 
      if ShopI=="3":
@@ -261,7 +316,20 @@ def shop():
      
      if ShopI=="4":
         break
+def feed():
+   while True:
+    sigmalicious=input("1: Feed 2: leave")
+    if sigmalicious=="1":
+      if self.food>=1:
+        self.food-=1
+        self.hunger+=10
+        print("food",self.food)
+        print("Hunger",self.hunger)
+      if self.food<=0:
+        print("buy food")
+        break
         
+<<<<<<< HEAD:Proj.py
 def stats():
    print(self.__dict__)
     
@@ -333,3 +401,22 @@ while True:
 
  
 #class instance function 
+=======
+    if sigmalicious=="2":
+       break
+
+
+    
+while True:
+ TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats 5: Feed")
+ if TRIPlETTUngTUngtUngsahur== "1":
+     fight()
+ elif TRIPlETTUngTUngtUngsahur=="2":
+    bosses()
+ elif TRIPlETTUngTUngtUngsahur== "3":
+     shop() 
+ elif TRIPlETTUngTUngtUngsahur=="4":
+    print(self.__dict__)
+ elif TRIPlETTUngTUngtUngsahur=="5":
+   feed()
+>>>>>>> lucassimga:aura.py
