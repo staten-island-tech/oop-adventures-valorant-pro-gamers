@@ -1,3 +1,4 @@
+
 name=input("name pet")
 class pet():
     def __init__(self,name,health,food,hunger,power,coins):
