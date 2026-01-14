@@ -334,52 +334,51 @@ while True:
                     break
     
     def shop():
-    while True:
-        
-        sigma6= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
-        if sigma6=="1":
-        if self.coins<3:
-            print("brokie")
-            break
-        elif self.coins>=3:
-            self.coins-=3
-            self.health+=150
-        
-        
-        if sigma6=="2":
-        if self.coins<3:
-            print("brokie")
-            break
-        elif self.coins>=3:
-            self.coins-=3
-            self.power+=5
-        
-
-        if sigma6=="3":
-        if self.coins>=1:
-            self.coins-=1
-            self.food+=1
-        elif self.coins<1:
-            print("brokie")
-            break
-        
-        if sigma6=="4":
-            break
-    def feed():
-    while True:
-        sigmalicious=input("1: Feed 2: leave")
-        if sigmalicious=="1":
-        if self.food>=1:
-            self.food-=1
-            self.hunger+=10
-            print("food",self.food)
-            print("Hunger",self.hunger)
-        if self.food<=0:
-            print("buy food")
-            break
+        while True:       
+            shops= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
+            if shops=="1":
+                if self.coins<3:
+                    print("brokie")
+                    break
+                elif self.coins>=3:
+                    self.coins-=3
+                    self.health+=150
             
-        if sigmalicious=="2":
-        break
+            
+            if shops=="2":
+                if self.coins<3:
+                    print("brokie")
+                    break
+                elif self.coins>=3:
+                    self.coins-=3
+                    self.power+=5
+            
+
+            if shops=="3":
+                if self.coins>=1:
+                    self.coins-=1
+                    self.food+=1
+                elif self.coins<1:
+                    print("brokie")
+                    break
+            
+            if shops=="4":
+                break
+    def feed():     
+        while True:
+            sigmalicious=input("1: Feed 2: leave")
+            if sigmalicious=="1":
+                if self.food>=1:
+                    self.food-=1
+                    self.hunger+=10
+                    print("food",self.food)
+                    print("Hunger",self.hunger)
+            if self.food<=0:
+                print("buy food")
+                break
+            
+            if sigmalicious=="2":
+                break
     
 
     def stats():
