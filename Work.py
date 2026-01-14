@@ -66,42 +66,5 @@ while True:
         print("Not an option")    
         continue
 
-        
 
-
-
-
-
-
-
-
-
-
- 
-#class instance function 
-    # def actualitems():
-    #     LeatherAmr = self.defence=+10
-
-    # items=[
-    #     {
-    #         "name": LeatherAmr,
-    #         "price": "200" ,
-    #         "description": "+10Def"
-    #     },
-    #     {
-    #         "name":"Food",
-    #         "price": "10",
-    #         "description": "+15Hng"
-    #     },
-    #     {
-    #         "name":"PowerPot",
-    #         "price": "100",
-    #         "description": "+5Pwr"
-    #     },
-    #     {
-    #         "name":"MaxHP",
-    #         "price": "50",
-    #         "description":"+10MaxHP"
-    #     }
-    # ]
 
