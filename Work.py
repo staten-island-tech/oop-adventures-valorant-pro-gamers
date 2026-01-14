@@ -100,8 +100,6 @@ while True:
             self.food<=0
             print("no food")
             
-    def fight():
-        print("fought")
     def slots():
         slot=random.randint(7,77)
         self.coins -=7
@@ -221,26 +219,26 @@ while True:
                         break 
                     
             
-            if sigma== "2":
-                boar1.health=50
-                print(boar1.health)
-                while True: 
-                    death()
-                    sigma2=input("1: attack 2: quit")
-                    if sigma2=="1":
-                        boar1.health-=self.power
-                        self.health-=boar1.power
-                        self.hunger-=1
-                        print(f"Self health",self.health)
-                        print(f"health boar:",boar1.health)
-                        print(self.hunger,"hunger")
-                    if sigma2=="2":
-                        break
-                    if boar1.health<=0:
-                        self.coins+=2
-                        print(f"coins",self.coins)
-                        print("you defeated the boar")
-                        break
+                    if sigma== "2":
+                        boar1.health=50
+                        print(boar1.health)
+                        while True: 
+                            death()
+                            sigma2=input("1: attack 2: quit")
+                            if sigma2=="1":
+                                boar1.health-=self.power
+                                self.health-=boar1.power
+                                self.hunger-=1
+                                print(f"Self health",self.health)
+                                print(f"health boar:",boar1.health)
+                                print(self.hunger,"hunger")
+                            if sigma2=="2":
+                                break
+                            if boar1.health<=0:
+                                self.coins+=2
+                                print(f"coins",self.coins)
+                                print("you defeated the boar")
+                                break
             
             
             if sigma== "3":
