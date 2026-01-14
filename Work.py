@@ -196,122 +196,119 @@ while True:
             self.power = int(power)
 
     orc1=orc("orc",[],200,30)
-    def pickattack():
-        
-        def fight():
-            while True:
-                sigma=input("1: zombie 2: boar 3: Golem 4: skeleton 5: orc 6: go back")
-                if sigma== "1":
-                    zombie1.health=40
-                    print(zombie1.health)
-                    while True: 
-                        death()
-                        sigma1=input("1: attack 2: quit")
-                        if sigma1=="1":
-                            zombie1.health-=self.power
-                            self.health-=zombie1.power
-                            self.hunger-=1
-                            print(f"Self health",self.health)
-                            print(f"health zombie:",zombie1.health)
-                            print(self.hunger,"hunger")
-                            
-                        if sigma1=="2":
-                            break
-                        if zombie1.health<=0:
-                            self.coins+=1
-                            print(f"coins",self.coins)
-                            print("you defeated the zombie")
-                            break 
+    def fight():
+        while True:
+            sigma=input("1: zombie 2: boar 3: Golem 4: skeleton 5: orc 6: go back")
+            if sigma== "1":
+                print(zombie1.health)
+                while True: 
+                    death()
+                    sigma1=input("1: attack 2: quit")
+                    if sigma1=="1":
+                        zombie1.health-=self.power
+                        self.health-=zombie1.power
+                        self.hunger-=1
+                        print(f"Self health",self.health)
+                        print(f"health zombie:",zombie1.health)
+                        print(self.hunger,"hunger")
                         
-                
-                if sigma== "2":
-                    boar1.health=50
-                    print(boar1.health)
-                    while True: 
-                        death()
-                        sigma2=input("1: attack 2: quit")
-                        if sigma2=="1":
-                            boar1.health-=self.power
-                            self.health-=boar1.power
-                            self.hunger-=1
-                            print(f"Self health",self.health)
-                            print(f"health boar:",boar1.health)
-                            print(self.hunger,"hunger")
-                        if sigma2=="2":
-                            break
-                        if boar1.health<=0:
-                            self.coins+=2
-                            print(f"coins",self.coins)
-                            print("you defeated the boar")
-                            break
-                
-                
-                if sigma== "3":
-                    golem1.health=80
-                    print(golem1.health)
-                    while True: 
-                        death()
-                        sigma3=input("1: attack 2: quit")
-                        if sigma3=="1":
-                            golem1.health-=self.power
-                            self.health-=golem1.power
-                            self.hunger-=1
-                            print(f"Self health",self.health)
-                            print(f"health golem:",golem1.health)
-                            print(self.hunger,"hunger")
-                        if sigma3=="2":
-                            break
-                        if golem1.health<=0:
-                            self.coins+=3
-                            print(f"coins",self.coins)
-                            print("you defeated the golem")
-                            break
-                
-                if sigma== "4":
-                    skeleton1.health=60
-                    print(skeleton1.health)
-                    while True: 
-                        death()
-                        sigma4=input("1: attack 2: quit")
-                        if sigma4=="1":
-                            skeleton1.health-=self.power
-                            self.health-=skeleton1.power
-                            self.hunger-=1
-                            print(f"Self health",self.health)
-                            print(f"health skeleton:",skeleton1.health)
-                            print(self.hunger,"hunger")
-                        if sigma4=="2":
-                            break
-                        if skeleton1.health<=0:
-                            self.coins+=1
-                            print(f"coins",self.coins)
-                            print("you defeated the skeleton")
-                            break
-                
-                
-                if sigma== "5":
-                    orc1.health=200
-                    print(orc1.health)
-                    while True: 
-                        death()
-                        sigma5=input("1: attack 2: quit")
-                        if sigma5=="1":
-                            orc1.health-=self.power
-                            self.health-=orc1.power
-                            self.hunger-=1
-                            print(f"Self health",self.health)
-                            print(f"health orc:",orc1.health)
-                            print(self.hunger,"hunger")
-                        if sigma5=="2":
-                            break
-                        if orc1.health<=0:
-                            self.coins+=5
-                            print(f"coins",self.coins)
-                            print("you defeated the orc")
-                            break
+                    if sigma1=="2":
+                        break
+                    if zombie1.health<=0:
+                        self.coins+=1
+                        print(f"coins",self.coins)
+                        print("you defeated the zombie")
+                        break 
                     
-                if sigma=="6":
-                    break
+            
+            if sigma== "2":
+                boar1.health=50
+                print(boar1.health)
+                while True: 
+                    death()
+                    sigma2=input("1: attack 2: quit")
+                    if sigma2=="1":
+                        boar1.health-=self.power
+                        self.health-=boar1.power
+                        self.hunger-=1
+                        print(f"Self health",self.health)
+                        print(f"health boar:",boar1.health)
+                        print(self.hunger,"hunger")
+                    if sigma2=="2":
+                        break
+                    if boar1.health<=0:
+                        self.coins+=2
+                        print(f"coins",self.coins)
+                        print("you defeated the boar")
+                        break
+            
+            
+            if sigma== "3":
+                golem1.health=80
+                print(golem1.health)
+                while True: 
+                    death()
+                    sigma3=input("1: attack 2: quit")
+                    if sigma3=="1":
+                        golem1.health-=self.power
+                        self.health-=golem1.power
+                        self.hunger-=1
+                        print(f"Self health",self.health)
+                        print(f"health golem:",golem1.health)
+                        print(self.hunger,"hunger")
+                    if sigma3=="2":
+                        break
+                    if golem1.health<=0:
+                        self.coins+=3
+                        print(f"coins",self.coins)
+                        print("you defeated the golem")
+                        break
+            
+            if sigma== "4":
+                skeleton1.health=60
+                print(skeleton1.health)
+                while True: 
+                    death()
+                    sigma4=input("1: attack 2: quit")
+                    if sigma4=="1":
+                        skeleton1.health-=self.power
+                        self.health-=skeleton1.power
+                        self.hunger-=1
+                        print(f"Self health",self.health)
+                        print(f"health skeleton:",skeleton1.health)
+                        print(self.hunger,"hunger")
+                    if sigma4=="2":
+                        break
+                    if skeleton1.health<=0:
+                        self.coins+=1
+                        print(f"coins",self.coins)
+                        print("you defeated the skeleton")
+                        break
+            
+            
+            if sigma== "5":
+                orc1.health=200
+                print(orc1.health)
+                while True: 
+                    death()
+                    sigma5=input("1: attack 2: quit")
+                    if sigma5=="1":
+                        orc1.health-=self.power
+                        self.health-=orc1.power
+                        self.hunger-=1
+                        print(f"Self health",self.health)
+                        print(f"health orc:",orc1.health)
+                        print(self.hunger,"hunger")
+                    if sigma5=="2":
+                        break
+                    if orc1.health<=0:
+                        self.coins+=5
+                        print(f"coins",self.coins)
+                        print("you defeated the orc")
+                        break
+                
+            if sigma=="6":
+                break
 
     def bosses(): 
         sigmalicious=input("1: zombified skeleton boss 2: Quit")
