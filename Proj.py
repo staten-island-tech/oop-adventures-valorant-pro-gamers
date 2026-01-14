@@ -113,14 +113,23 @@ def fight():
        print(boar1.health)
        while True: 
         death()
+<<<<<<< HEAD
         sigma2=input("1: attack 2: quit")
         if sigma2=="1":
+=======
+        choice=input("1: attack 2: quit")
+        if choice=="1":
+>>>>>>> Nathanwork-Branch
             boar1.health-=self.power
             self.health-=boar1.power
             print(f"Self health",self.health)
             print(f"health boar:",boar1.health)
             
+<<<<<<< HEAD
         if sigma2=="2":
+=======
+        if choice=="2":
+>>>>>>> Nathanwork-Branch
             break
         if boar1.health<=0:
             self.coins+=2
@@ -134,14 +143,23 @@ def fight():
        print(golem1.health)
        while True: 
         death()
+<<<<<<< HEAD
         sigma3=input("1: attack 2: quit")
         if sigma3=="1":
+=======
+        choice=input("1: attack 2: quit")
+        if choice=="1":
+>>>>>>> Nathanwork-Branch
             golem1.health-=self.power
             self.health-=golem1.power
             print(f"Self health",self.health)
             print(f"health golem:",golem1.health)
         
+<<<<<<< HEAD
         if sigma3=="2":
+=======
+        if choice=="2":
+>>>>>>> Nathanwork-Branch
             break
         if golem1.health<=0:
             self.coins+=3
@@ -154,13 +172,22 @@ def fight():
        print(skeleton1.health)
        while True: 
         death()
+<<<<<<< HEAD
         sigma4=input("1: attack 2: quit")
         if sigma4=="1":
+=======
+        choice=input("1: attack 2: quit")
+        if choice=="1":
+>>>>>>> Nathanwork-Branch
             skeleton1.health-=self.power
             self.health-=skeleton1.power
             print(f"Self health",self.health)
             print(f"health skeleton:",skeleton1.health)
+<<<<<<< HEAD
         if sigma4=="2":
+=======
+        if choice=="2":
+>>>>>>> Nathanwork-Branch
             break
         if skeleton1.health<=0:
             self.coins+=1
@@ -174,13 +201,22 @@ def fight():
        print(orc1.health)
        while True: 
         death()
+<<<<<<< HEAD
         sigma5=input("1: attack 2: quit")
         if sigma5=="1":
+=======
+        choice=input("1: attack 2: quit")
+        if choice=="1":
+>>>>>>> Nathanwork-Branch
             orc1.health-=self.power
             self.health-=orc1.power
             print(f"Self health",self.health)
             print(f"health orc:",orc1.health)
+<<<<<<< HEAD
         if sigma5=="2":
+=======
+        if choice=="2":
+>>>>>>> Nathanwork-Branch
             break
         if orc1.health<=0:
             self.coins+=5
@@ -235,7 +271,11 @@ while True:
         print("death")
         quit()
     enemies=["zombie","golem","skeleton"]
+<<<<<<< HEAD
             
+=======
+    
+>>>>>>> Nathanwork-Branch
     def overcap():
         for stat in ("hunger", "thirst"):
             setattr(self, stat, min(getattr(self, stat), 100))#stuff
@@ -284,7 +324,11 @@ while True:
     if choice in options:
         options[choice]()
     else:
+<<<<<<< HEAD
         print("Not an option")    
+=======
+        print("Not an option")
+>>>>>>> Nathanwork-Branch
         continue
 
  
