@@ -76,7 +76,7 @@ class Zombifiedskeletonboss():
         self.health = int(health)
         self.power = int(power)
 
-boss1 =Zombifiedskeletonboss("golem king",[],670,50)
+boss1 =Zombifiedskeletonboss("zombified skeleton boss",[],10000,50)
 
 
 class orc():
@@ -221,7 +221,7 @@ def bosses():
         if sigma67=="2":
             break
         if boss1.health<=0:
-            self.coins+=50
+            self.coins+=150
             print(f"coins",self.coins)
             print("you defeated the auralicious boss")
             break
@@ -265,9 +265,11 @@ def feed():
       if self.food>=1:
         self.food-=1
         self.hunger+=10
-        print(self.food)
+        print("food",self.food)
+        print("Hunger",self.hunger)
       if self.food<=0:
         print("buy food")
+        break
         
     if sigmalicious=="2":
        break
@@ -278,11 +280,11 @@ while True:
  TRIPlETTUngTUngtUngsahur=input("1:Fight 2: Bosses 3: Shop 4: Stats 5: Feed")
  if TRIPlETTUngTUngtUngsahur== "1":
      fight()
- if TRIPlETTUngTUngtUngsahur=="2":
+ elif TRIPlETTUngTUngtUngsahur=="2":
     bosses()
- if TRIPlETTUngTUngtUngsahur== "3":
-     shop()
- if TRIPlETTUngTUngtUngsahur=="4":
+ elif TRIPlETTUngTUngtUngsahur== "3":
+     shop() 
+ elif TRIPlETTUngTUngtUngsahur=="4":
     print(self.__dict__)
- if TRIPlETTUngTUngtUngsahur=="5":
+ elif TRIPlETTUngTUngtUngsahur=="5":
    feed()
