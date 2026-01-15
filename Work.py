@@ -1,57 +1,57 @@
 # import random
 # name=input("name pet")
 # class pet():
-#     def __init__(self,name,health,food,hunger,thirst,power,coins,defence):
-#         self.name=name
-#         self.health=int(health)
-#         self.food=int(food)
-#         self.hunger=int(hunger)
-#         self.thirst=int(thirst)
-#         self.power=int(power)
-#         self.coins=int(coins)
-#         self.defence=int(defence)
-# self=pet(name,100,2,75,75,2,20,5)
-# print(self.__dict__)
+#     def __init__(player,name,health,food,hunger,thirst,power,coins,defence):
+#         player.name=name
+#         player.health=int(health)
+#         player.food=int(food)
+#         player.hunger=int(hunger)
+#         player.thirst=int(thirst)
+#         player.power=int(power)
+#         player.coins=int(coins)
+#         player.defence=int(defence)
+# player=pet(name,100,2,75,75,2,20,5)
+# print(player.__dict__)
 # while True:
 #     action=input("Fight or Feed?")
-#     if self.hunger<=0:
+#     if player.hunger<=0:
 #         print("death")
 #         quit()
 #     enemies=["zombie","golem","skeleton"]
                
 #     def overcap():
 #         for stat in ("hunger", "thirst"):
-#             setattr(self, stat, min(getattr(self, stat), 100))
+#             setattr(player, stat, min(getattr(player, stat), 100))
         
 #     def feed():
-#         if self.food>=1:
-#             self.hunger+=10
-#             self.food-=1
-#             print(self.hunger)
+#         if player.food>=1:
+#             player.hunger+=10
+#             player.food-=1
+#             print(player.hunger)
 #         else:
-#             self.food<=0
+#             player.food<=0
 #             print("no food")
             
 #     def fight():
 #         print("fought")
 #     def slots():
 #         slot=random.randint(7,77)
-#         self.coins -=7
+#         player.coins -=7
 #         print("Gambling...")
 #         if slot <=76:
 #             print("Fail D: (1 to quickgamble)")
 #         else:
 #             print("YOU WON!!!!!")
-#             self.coins +=777
+#             player.coins +=777
 #     def quickslots():
 #         slot=random.randint(7,77)
-#         self.coins -=7
+#         player.coins -=7
 #         print("Gambling...")
 #         if slot <=76:
 #             print("Fail D:")
 #         else:
 #             print("YOU WON!!!!!")
-#             self.coins +=777
+#             player.coins +=777
 
 #     options = {
 #         "fight":fight,
@@ -70,57 +70,57 @@
 import random
 name=input("name pet")
 class pet():
-    def __init__(self,name,health,food,hunger,thirst,power,coins,defence):
-        self.name=name
-        self.health=int(health)
-        self.food=int(food)
-        self.hunger=int(hunger)
-        self.thirst=int(thirst)
-        self.power=int(power)
-        self.coins=int(coins)
-        self.defence=int(defence)
-self=pet(name,150,2,75,8,3)
-print(self.__dict__)
+    def __init__(player,name,health,food,hunger,power,coins):
+        player.name=name
+        player.health=int(health)
+        player.food=int(food)
+        player.hunger=int(hunger)
+        player.power=int(power)
+        player.coins=int(coins)
+
+player=pet(name,150,2,75,8,3)
+print(player.__dict__)
 while True:
     action=input("Fight,Feed,Gamble,Bosses,Stats,or shop?")
-    if self.hunger<=0:
+    if player.hunger<=0:
         print("death")
         quit()
                
     def overcap():
         for stat in ("hunger"):
-            setattr(self, stat, min(getattr(self, stat), 100))
+            setattr(player, stat, min(getattr(player, stat), 100))
         
     def feed():
-        if self.food>=1:
-            self.hunger+=10
-            self.food-=1
-            print(self.hunger)
+        if player.food>=1:
+            player.hunger+=10
+            player.food-=1
+            print(player.hunger)
+            print("food left"),player.food
         else:
-            self.food<=0
+            player.food<=0
             print("no food")
             
     def slots():
         slot=random.randint(7,77)
-        self.coins -=7
+        player.coins -=7
         print("Gambling...")
         if slot <=76:
             print("Fail D: (1 to quickgamble)")
         else:
             print("YOU WON!!!!!")
-            self.coins +=777
+            player.coins +=777
     def quickslots():
         slot=random.randint(7,77)
-        self.coins -=7
+        player.coins -=7
         print("Gambling...")
         if slot <=76:
             print("Fail D:")
         if slot==77:
             print("YOU WON!!!!!")
-            self.coins +=777
+            player.coins +=777
 
     options = {
-        "fight":fight,
+        "fight":combat_system,
         "feed":feed,
         "slots":slots,
         "1":quickslots,
@@ -133,195 +133,71 @@ while True:
         print("Not an option")    
         continue
 
-    print(self.__dict__)
+    print(player.__dict__)
     def death():
-        if self.health<=0:
+        if player.health<=0:
             print("you died buy potions to make you stronger")
             quit()
-        if self.hunger<=0:
+        if player.hunger<=0:
             print("you died of hunger")
             quit()
     
-    class Enemy():
-        def __init__(self,name,max_health,power):
-            self.name = name
-            self.max_health= int(max_health)
-            self.health = self.max_health     
-            self.power = int(power)   
-        def healthreset(self):
-            self.health = self.max_health
+    class enemy():
+        def __init__(player,name,max_health,power,reward):
+            player.name = name
+            player.max_health= int(max_health)
+            player.health = player.max_health     
+            player.power = int(power)   
+            player.reward = int(reward)
+        def health_reset(player):
+            player.health = player.max_health
     enemies = {
-    "1": Enemy("Zombie", 40, 15, 1),
-    "2": Enemy("Boar", 50, 20, 2),
-    "3": Enemy("Golem", 80, 30, 3),
-    "4": Enemy("Skeleton", 60, 5, 1),
-    "5": Enemy("Orc", 200, 30, 5)
-}
-    
-    class zombie():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
-
-    zombie1 =zombie("zombie",[], 40, 15)
-
-
-    class boar():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
-
-    boar1 =boar("boar",[], 50, 20)
-
-
-    class golem():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
-
-    golem1 =golem("golem",[], 80, 30)
-
-
-    class skeleton():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
-
-    skeleton1 =skeleton("skeleton",[], 60, 5)
+    "1": enemy("Zombie", 40, 15, 1 ),
+    "2": enemy("Boar", 50, 20, 2),
+    "3": enemy("Golem", 80, 30, 3),
+    "4": enemy("Skeleton", 60, 5,1),
+    "5": enemy("Orc", 200, 30, 5)
+    }
 
     class Zombifiedskeletonboss():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
+        def __init__(player,name,health,power):
+            player.name = name
+            player.health = int(health)
+            player.power = int(power)
 
     boss1 =Zombifiedskeletonboss("zombified skeleton boss",[],10000,50)
   
-
-    class orc():
-        def __init__(self,name,health,power):
-            self.name = name
-            self.health = int(health)
-            self.power = int(power)
-
-    orc1=orc("orc",[],200,30)
-    def fight():
+    def combat_system():
+        print("choose enemy:")
+        for key, enemy_chosen in enemies.items():
+            print(f"{key}: {enemy_chosen.name} (Helath: {enemy_chosen.health})")
+            choice = input("number:")
+            if choice not in enemies:
+                print("Not a choice")
+                return
+            enemy_chosen = enemies[choice]
+            enemy_chosen.health_reset()
+        print(f"{enemy_chosen}'s health:",enemy_chosen.health)
         while True:
-            sigma=input("1: zombie 2: boar 3: Golem 4: skeleton 5: orc 6: go back")
-            if sigma== "1":
-                print(zombie1.health)
-                while True: 
-                    death()
-                    sigma1=input("1: attack 2: quit")
-                    if sigma1=="1":
-                        zombie1.health-=self.power
-                        self.health-=zombie1.power
-                        self.hunger-=1
-                        print(f"Self health",self.health)
-                        print(f"health zombie:",zombie1.health)
-                        print(self.hunger,"hunger")
-                        
-                    if sigma1=="2":
-                        break
-                    if zombie1.health<=0:
-                        self.coins+=1
-                        print(f"coins",self.coins)
-                        print("you defeated the zombie")
-                        break 
-                    
-            
-                    if sigma== "2":
-                        boar1.health=50
-                        print(boar1.health)
-                        while True: 
-                            death()
-                            sigma2=input("1: attack 2: quit")
-                            if sigma2=="1":
-                                boar1.health-=self.power
-                                self.health-=boar1.power
-                                self.hunger-=1
-                                print(f"Self health",self.health)
-                                print(f"health boar:",boar1.health)
-                                print(self.hunger,"hunger")
-                            if sigma2=="2":
-                                break
-                            if boar1.health<=0:
-                                self.coins+=2
-                                print(f"coins",self.coins)
-                                print("you defeated the boar")
-                                break
-            
-            
-            if sigma== "3":
-                golem1.health=80
-                print(golem1.health)
-                while True: 
-                    death()
-                    sigma3=input("1: attack 2: quit")
-                    if sigma3=="1":
-                        golem1.health-=self.power
-                        self.health-=golem1.power
-                        self.hunger-=1
-                        print(f"Self health",self.health)
-                        print(f"health golem:",golem1.health)
-                        print(self.hunger,"hunger")
-                    if sigma3=="2":
-                        break
-                    if golem1.health<=0:
-                        self.coins+=3
-                        print(f"coins",self.coins)
-                        print("you defeated the golem")
-                        break
-            
-            if sigma== "4":
-                skeleton1.health=60
-                print(skeleton1.health)
-                while True: 
-                    death()
-                    sigma4=input("1: attack 2: quit")
-                    if sigma4=="1":
-                        skeleton1.health-=self.power
-                        self.health-=skeleton1.power
-                        self.hunger-=1
-                        print(f"Self health",self.health)
-                        print(f"health skeleton:",skeleton1.health)
-                        print(self.hunger,"hunger")
-                    if sigma4=="2":
-                        break
-                    if skeleton1.health<=0:
-                        self.coins+=1
-                        print(f"coins",self.coins)
-                        print("you defeated the skeleton")
-                        break
-            
-            
-            if sigma== "5":
-                orc1.health=200
-                print(orc1.health)
-                while True: 
-                    death()
-                    sigma5=input("1: attack 2: quit")
-                    if sigma5=="1":
-                        orc1.health-=self.power
-                        self.health-=orc1.power
-                        self.hunger-=1
-                        print(f"Self health",self.health)
-                        print(f"health orc:",orc1.health)
-                        print(self.hunger,"hunger")
-                    if sigma5=="2":
-                        break
-                    if orc1.health<=0:
-                        self.coins+=5
-                        print(f"coins",self.coins)
-                        print("you defeated the orc")
-                        break
-                
-            if sigma=="6":
+            death()
+            Attacking = input("1:attack 2:quit")
+            if Attacking == "2":
                 break
+            if Attacking =="1":
+                enemy_chosen.health -= player.power
+                player.health -= enemy_chosen.power
+                player.hunger -= 5
+            
+                print("Your health:", player.health)
+                print(f"{enemy_chosen.name}'s health:", enemy_chosen.health)
+                print("hunger:", player.hunger)
+                if enemy_chosen.health <=0:
+                    player.coins += enemy_chosen.reward
+                    print(f"You defeated{enemy_chosen.name}!")
+                    print(player.coins)
+                    break
+            else:
+                print("No")
 
     def bosses(): 
         sigmalicious=input("1: zombified skeleton boss 2: Quit")
@@ -332,17 +208,17 @@ while True:
                 death()
                 sigma67=input("1: attack 2: quit")
                 if sigma67=="1":
-                    boss1.health-=self.power
-                    self.health-=boss1.power
-                    self.hunger-=5
-                    print(f"Self health",self.health)
+                    boss1.health-=player.power
+                    player.health-=boss1.power
+                    player.hunger-=5
+                    print(f"player health",player.health)
                     (f"health boss:",boss1.health)
-                    print(self.hunger,"hunger")
+                    print(player.hunger,"hunger")
                 if sigma67=="2":
                     break
                 if boss1.health<=0:
-                    self.coins+=150
-                    print(f"coins",self.coins)
+                    player.coins+=150
+                    print(f"coins:",player.coins)
                     print("you defeated the auralicious boss")
                     break
     
@@ -350,28 +226,28 @@ while True:
         while True:       
             shops= input("1: 3$ health potion 2: 3$ power potion 3: 1$ food 4: go back")
             if shops=="1":
-                if self.coins<3:
+                if player.coins<3:
                     print("brokie")
                     break
-                elif self.coins>=3:
-                    self.coins-=3
-                    self.health+=150
+                elif player.coins>=3:
+                    player.coins-=3
+                    player.health+=150
             
             
             if shops=="2":
-                if self.coins<3:
+                if player.coins<3:
                     print("brokie")
                     break
-                elif self.coins>=3:
-                    self.coins-=3
-                    self.power+=5
+                elif player.coins>=3:
+                    player.coins-=3
+                    player.power+=5
             
 
             if shops=="3":
-                if self.coins>=1:
-                    self.coins-=1
-                    self.food+=1
-                elif self.coins<1:
+                if player.coins>=1:
+                    player.coins-=1
+                    player.food+=1
+                elif player.coins<1:
                     print("brokie")
                     break
             
@@ -381,12 +257,12 @@ while True:
         while True:
             sigmalicious=input("1: Feed 2: leave")
             if sigmalicious=="1":
-                if self.food>=1:
-                    self.food-=1
-                    self.hunger+=10
-                    print("food",self.food)
-                    print("Hunger",self.hunger)
-            if self.food<=0:
+                if player.food>=1:
+                    player.food-=1
+                    player.hunger+=10
+                    print("food",player.food)
+                    print("Hunger",player.hunger)
+            if player.food<=0:
                 print("buy food")
                 break
             
@@ -395,7 +271,7 @@ while True:
     
 
     def stats():
-        print(self.__dict__)
+        print(player.__dict__)
     options = {
         "fight":fight,
         "feed":feed,
