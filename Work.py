@@ -142,7 +142,22 @@ while True:
             print("you died of hunger")
             quit()
     
-            
+    class Enemy():
+        def __init__(self,name,max_health,power):
+            self.name = name
+            self.max_health= int(max_health)
+            self.health = self.max_health     
+            self.power = int(power)   
+        def healthreset(self):
+            self.health = self.max_health
+    enemies = {
+    "1": Enemy("Zombie", 40, 15, 1),
+    "2": Enemy("Boar", 50, 20, 2),
+    "3": Enemy("Golem", 80, 30, 3),
+    "4": Enemy("Skeleton", 60, 5, 1),
+    "5": Enemy("Orc", 200, 30, 5)
+}
+    
     class zombie():
         def __init__(self,name,health,power):
             self.name = name
