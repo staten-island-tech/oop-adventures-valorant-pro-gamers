@@ -97,8 +97,6 @@ while True:
         enemy_chosen.health_reset()
         print(f"{enemy_chosen}'s health:",enemy_chosen.health)
         
-
-
         while True:
             death()
             Attacking = input("1:attack 2:quit")
