@@ -1,71 +1,3 @@
-# import random
-# name=input("name pet")
-# class pet():
-#     def __init__(player,name,health,food,hunger,thirst,power,coins,defence):
-#         player.name=name
-#         player.health=int(health)
-#         player.food=int(food)
-#         player.hunger=int(hunger)
-#         player.thirst=int(thirst)
-#         player.power=int(power)
-#         player.coins=int(coins)
-#         player.defence=int(defence)
-# player=pet(name,100,2,75,75,2,20,5)
-# print(player.__dict__)
-# while True:
-#     action=input("Fight or Feed?")
-#     if player.hunger<=0:
-#         print("death")
-#         quit()
-#     enemies=["zombie","golem","skeleton"]
-               
-#     def overcap():
-#         for stat in ("hunger", "thirst"):
-#             setattr(player, stat, min(getattr(player, stat), 100))
-        
-#     def feed():
-#         if player.food>=1:
-#             player.hunger+=10
-#             player.food-=1
-#             print(player.hunger)
-#         else:
-#             player.food<=0
-#             print("no food")
-            
-#     def fight():
-#         print("fought")
-#     def slots():
-#         slot=random.randint(7,77)
-#         player.coins -=7
-#         print("Gambling...")
-#         if slot <=76:
-#             print("Fail D: (1 to quickgamble)")
-#         else:
-#             print("YOU WON!!!!!")
-#             player.coins +=777
-#     def quickslots():
-#         slot=random.randint(7,77)
-#         player.coins -=7
-#         print("Gambling...")
-#         if slot <=76:
-#             print("Fail D:")
-#         else:
-#             print("YOU WON!!!!!")
-#             player.coins +=777
-
-#     options = {
-#         "fight":fight,
-#         "feed":feed,
-#         "slots":slots,
-#         "1":quickslots
-#                 }
-#     choice = action.lower()
-#     if choice in options:
-#         options[choice]()
-#     else:
-#         print("Not an option")    
-#         continue
-
 
 import random
 name=input("name pet")
@@ -81,10 +13,8 @@ class pet():
 player=pet(name,150,2,75,8,3)
 print(player.__dict__)
 while True:
-    action=input("Fight,Feed,Gamble,Bosses,Stats,or shop?")
-    if player.hunger<=0:
-        print("death")
-        quit()
+    
+    actionss=input("Fight,Feed,Gamble,Bosses,Stats,or shop?")
                
     def overcap():
         for stat in ("hunger"):
@@ -119,20 +49,6 @@ while True:
             print("YOU WON!!!!!")
             player.coins +=777
 
-    options = {
-        "fight":combat_system,
-        "feed":feed,
-        "slots":slots,
-        "1":quickslots,
-        "bosses":bosses,
-                }
-    choice = action.lower()
-    if choice in options:
-        options[choice]()
-    else:
-        print("Not an option")    
-        continue
-
     print(player.__dict__)
     def death():
         if player.health<=0:
@@ -165,19 +81,24 @@ while True:
             player.health = int(health)
             player.power = int(power)
 
-    boss1 =Zombifiedskeletonboss("zombified skeleton boss",[],10000,50)
+    boss1 =Zombifiedskeletonboss("zombified skeleton boss",10000,50)
   
     def combat_system():
         print("choose enemy:")
         for key, enemy_chosen in enemies.items():
             print(f"{key}: {enemy_chosen.name} (Helath: {enemy_chosen.health})")
-            choice = input("number:")
-            if choice not in enemies:
-                print("Not a choice")
-                return
-            enemy_chosen = enemies[choice]
-            enemy_chosen.health_reset()
+
+        choice = input("number:")
+        if choice not in enemies:
+            print("Not a choice")
+            return
+            
+        enemy_chosen = enemies[choice]
+        enemy_chosen.health_reset()
         print(f"{enemy_chosen}'s health:",enemy_chosen.health)
+        
+
+
         while True:
             death()
             Attacking = input("1:attack 2:quit")
@@ -193,8 +114,8 @@ while True:
                 print("hunger:", player.hunger)
                 if enemy_chosen.health <=0:
                     player.coins += enemy_chosen.reward
-                    print(f"You defeated{enemy_chosen.name}!")
-                    print(player.coins)
+                    print(f"You defeated {enemy_chosen.name}!")
+                    print(f"Your coins:{player.coins}")
                     break
             else:
                 print("No")
@@ -273,7 +194,7 @@ while True:
     def stats():
         print(player.__dict__)
     options = {
-        "fight":fight,
+        "fight":combat_system,
         "feed":feed,
         "slots":slots,
         "1":quickslots,
@@ -281,4 +202,10 @@ while True:
         "shop":shop,
         "stats":stats
                 }
+    choice = actionss.lower()
+    if choice in options:
+        options[choice]()
+    else:
+        print("Not an option")    
+        continue
 
